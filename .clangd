@@ -1,0 +1,9 @@
+If:
+    PathMatch: '.*\.c$'
+CompileFlags:
+    Remove: [-std=*]
+    Add:
+        - -std=c23
+        - -I/home/Gopher/Documents/thirdparty/xv6-labs-2026
+        - --target=riscv64-unknown-elf
+        - -ffreestanding

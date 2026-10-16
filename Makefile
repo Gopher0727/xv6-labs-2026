@@ -61,7 +61,7 @@ endif
 
 # riscv64-unknown-elf- or riscv64-linux-gnu-
 # perhaps in /opt/riscv/bin
-#TOOLPREFIX = 
+#TOOLPREFIX =
 
 # Try to infer the correct TOOLPREFIX if not set
 ifndef TOOLPREFIX
@@ -203,6 +203,9 @@ UPROGS=\
 	$U/_forphan\
 	$U/_dorphan\
 	$U/_sync\
+	$U/_sleep\
+	$U/_sixfive\
+	$U/_find\
 
 
 
@@ -288,7 +291,7 @@ endif
 fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS)
 	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS)
 
-newfs.img: 
+newfs.img:
 	-mv -f fs.img fs.img.bk
 
 -include kernel/*.d user/*.d
